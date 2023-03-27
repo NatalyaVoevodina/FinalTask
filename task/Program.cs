@@ -6,7 +6,20 @@
         if (array[i].Length <= size) count++;
     }
     return count;
-
+}
+string[] FillResultArray(string[] array, int count, int size)
+{
+    string[] result = new string[count];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= size)
+        {
+            result[result.Length - count] = array[i];
+            count--;
+        }
+    }
+    return result;
+}
 
 Console.Write("Введите количество строк предполагаемого массива: ");
 int n = Convert.ToInt32(Console.ReadLine()); // Считываем строку, переводим в число.
